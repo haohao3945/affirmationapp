@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给焦虑的你</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<style>
+		body {
+			background-color: #f4f4f4;
+			text-align: center;
+			font-family: '宋体', 'Songti', 'SimSun', sans-serif;
+			color: #333;
+			margin: 50px;
+		}
+
+		#affirmation-container {
+			max-width: 500px;
+			margin: 0 auto;
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+		}
+
+		h1 {
+			color: #3498db;
+			font-size: 30px;
+			margin: 0;
+			margin-bottom: 20px;
+		}
+
+		#desc {
+			margin-bottom: 20px;
+			text-align: center;
+			font-size: 18px;
+		}
+
+		p {
+			font-size: 18px; /* Adjusted font size */
+		}
+
+		#affirmation-text {
+			font-size: 18px;
+			margin-bottom: 20px;
+		}
+
+		#affirmation-image {
+			max-width: 100%;
+			height: auto;
+			margin-bottom: 20px;
+			border-radius: 5px;
+		}
+
+		#navigation button {
+			background: none;
+			border: none;
+			cursor: pointer;
+			font-size: 24px; /* Adjusted font size */
+			color: #3498db;
+			transition: color 0.3s ease; /* Added transition effect */
+		}
+
+		#navigation button:hover {
+			color: #2980b9; /* Adjusted hover color */
+		}
+
+	</style>
+</head>
+
+<body>
+    <div id="affirmation-container">
+        <h1><strong>给焦虑的你</strong></h1>
+        <p id="desc">工作问题焦虑，除自己无人心疼。珍惜自己，点击按钮，寻找爱自己的方式。</p>
+        <img id="affirmation-image" src="" alt="Affirmation Image">
+        <div id="affirmation-text">Loading...</div>
+        <div id="navigation">
+            <button class="arrow-left" style="font-size:15px;" onclick="prevAffirmation()">&larr;上一页</button>
+            <button class="arrow-right" style="font-size:15px;" onclick="nextAffirmation()">下一页&rarr;</button>
+        </div>
+    </div>
+
+
+     <div class="section" style="margin-top:80px;">
+            <div class="row">
+
+                <div class="col-12 col-6" style="margin-bottom:30px;">
+                    <h1>将 Web App 添加到主屏幕</h1>
+                    <p>如果你喜欢这个app, 想要收起来，可以在浏览器中打开，然后选择“添加到主屏幕”以创建应用的快捷方式。</p>
+                    <iframe src="https://www.youtube.com/embed/dTFaSVUlmA4?si=haZAEGNuYLF5ZXxc" frameborder="0" style="width:100%; min-height:400px;"allowfullscreen></iframe>
+                </div>
+                <div class="col-12 col-6" >
+                    <h1>给我们一点意见</h1>
+                    <form action="https://script.google.com/macros/s/AKfycbxHQefQKgU5bVNMaDdbp_oP8mge0U2UAcvx2Y9M0c8kOJxpuCfJUbimgESUCeKJrZ2blg/exec" method="POST">
+                        <label for="feedback">提供反馈：</label>
+                        <textarea id="moreDetails" name="details" class="form-control" id="feedback" rows="3"></textarea>
+                        <button type="submit" class="btn btn-primary mt-2">提交反馈</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+		
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+		var counter = 0;
+		function remove(){
+			if (counter ===0){
+				affirmations.shift();
+				currentAffirmationIndex = currentAffirmationIndex - 1;
+				counter ++;
+			}	
+		}			
+        const affirmations = [
+		    { text: "开始吧", image: "affirmation0.jpg" },
+			{ text: "1. 在职场面临被领导PUA,被骂。这是时候训练自己的玻璃心了。这时候要做的，就是忽略领导情绪，客观理清需要处理的事情。", image: "affirmation1.jpg" },
+			{ text: "2. 有时寻求帮助是一种智慧，可以通过朋友、论坛、视频、同事，甚至陌生人来分享想法，获取经验。", image: "affirmation2.jpg" },
+			{ text: "3. 在职场成长的道路上，有时会被讨厌、批评，这些需要勇气去面对。不要怕被骂，被裁员，等等，不要迎合他人的苛刻，而是先让自己过得健康，让自己慢慢成长！", image: "affirmation3.jpg" },
+			{ text: "4. 有些性格特点，比如讨好、敏感、过于负责，以及缺乏自信，会让我们难受。领带可以苛刻，但自己不要对待自己苛刻。无论发生什么，你只有进步，同时要忽略所有的PUA。", image: "affirmation4.jpg" },
+			{ text: "5. 让自己成长，学习新技能是重要的一步。创造副业，找到离开当前困境的勇气。", image: "affirmation5.jpg" },
+			{ text: "6. 让自己静下心来，做好自己能做的。其他的你无法控制，只能面对。所以不要怕接下来发生什么，就算被批评，被骂，被讨厌，被当众酸，也要了解，自己是有价值的，你需要做的，就是把它展现出来。", image: "affirmation7.jpg" },
+			{ text: "7. 在职业生涯中犯错。不要怀疑自己的能力，因为你有进步的空间，也可以创造自己的价值。一切否定你的能力的都是PUA。", image: "affirmation6.jpg" }
+        ];
+
+        let currentAffirmationIndex = 0;
+        const affirmationTextElement = document.getElementById('affirmation-text');
+        const affirmationImageElement = document.getElementById('affirmation-image');
+
+        function showAffirmation(index) {
+            const affirmation = affirmations[index];
+            affirmationTextElement.textContent = affirmation.text;
+            affirmationImageElement.src = affirmation.image;
+        }
+
+        function nextAffirmation() {
+            currentAffirmationIndex = (currentAffirmationIndex + 1) % affirmations.length;
+            showAffirmation(currentAffirmationIndex);
+			remove();
+
+        }
+
+        function prevAffirmation() {
+            currentAffirmationIndex = (currentAffirmationIndex - 1 + affirmations.length) % affirmations.length;
+            showAffirmation(currentAffirmationIndex);
+			remove();
+
+        }
+
+        // Initial display
+        showAffirmation(currentAffirmationIndex);
+		
+		
+		//
+    // Check window width on load and resize
+    function updateColumnClasses() {
+        if ($(window).width() < 768) {
+            $('.col-6').removeClass('col-6').addClass('col-12');
+            $('.col-6').removeClass('col-6').addClass('col-12');
+        } else {
+            $('.col-12').removeClass('col-12').addClass('col-6');
+            $('.col-12').removeClass('col-12').addClass('col-6');
+        }
+    }
+
+    // Initial update
+    updateColumnClasses();
+
+    // Update on window resize
+    $(window).resize(function() {
+        updateColumnClasses();
+    });
+	
+	// track view 
+	window.onload = function() {
+	console.log("hi")
+	// Fetch the URL
+    fetch('https://script.google.com/macros/s/AKfycbxMdAmgo9_wsiUIU23pRZpeYuHqd50RdKukED3w1Q_fRmyuGrqQBEcavc-WxI-7PQQg8A/exec?view=3')
+        .then(response => response.json()
+		
+		)
+        .then(data => {
+            // Handle the data as needed
+            console.log(data);
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('Error fetching data:', error);
+        });
+		addAppToHomeScreen()
+	
+	};
+
+	setTimeout(function () {
+		fetch('https://script.google.com/macros/s/AKfycbxMdAmgo9_wsiUIU23pRZpeYuHqd50RdKukED3w1Q_fRmyuGrqQBEcavc-WxI-7PQQg8A/exec?home=3')
+		.then(response => response.json())
+		.then(data => {
+			console.log(data);
+		})
+		.catch(error => {
+			console.error('Error fetching data:', error);
+		});
+
+      }, 30000);
+	</script>
+    </script>
+</body>
+
+</html>
